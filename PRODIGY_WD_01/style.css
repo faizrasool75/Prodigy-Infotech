@@ -1,0 +1,274 @@
+/* Updated styles for the navigation menu */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4caf50; /* Change the background color of the navigation menu */
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Add transitions */
+}
+
+.navbar a:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #4caf50; /* Change text color on hover */
+  transform: scale(1.1); /* Add scaling effect on hover */
+}
+
+/* New animation for the menu items */
+.navbar a {
+  animation: none; /* Remove initial animation */
+}
+
+.navbar a:hover {
+  animation: wobble 0.5s ease-in-out infinite alternate; /* Apply animation on hover */
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-3px) rotate(-3deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+/* Rest of the styles remain the same */
+
+#navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.content {
+  font-size: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: tomato;
+  height: 90vh;
+  text-align: center;
+}
+
+.content2 {
+  font-size: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: burlywood;
+  height: 90vh;
+  text-align: center;
+}
+
+.container {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 {
+  background-color: #ff7f50;
+}
+
+.box2 {
+  background-color: aqua;
+}
+
+.box3 {
+  background-color: brown;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 100px;
+}
+.button-container {
+  display: flex;
+  background-color: rgba(0, 73, 144);
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    rgba(0, 73, 144, 0.5) 5px 10px 15px;
+  transition: all 0.5s;
+}
+.button-container:hover {
+  width: 300px;
+  transition: all 0.5s;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+.item-hints {
+  /* margin-top: 00px; */
+  --purple: #720c8f;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 170px;
+  background-color: brown;
+}
+.item-hints .hint {
+  margin: 150px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-hints .hint-dot {
+  z-index: 3;
+  border: 1px solid #ffe4e4;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: translate(-0%, -0%) scale(0.95);
+  transform: translate(-0%, -0%) scale(0.95);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.item-hints .hint-radius {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -125px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.item-hints .hint[data-position="1"] .hint-content {
+  top: 85px;
+  left: 50%;
+  margin-left: 56px;
+}
+.item-hints .hint-content {
+  width: 300px;
+  position: absolute;
+  z-index: 5;
+  padding: 35px 0;
+  opacity: 0;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+  color: #fff;
+  visibility: hidden;
+  pointer-events: none;
+}
+.item-hints .hint:hover .hint-content {
+  position: absolute;
+  z-index: 5;
+  padding: 35px 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+  color: #fff;
+  visibility: visible;
+  pointer-events: none;
+}
+.item-hints .hint-content::before {
+  width: 0px;
+  bottom: 29px;
+  left: 0;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  position: absolute;
+  transition: width 0.4s;
+}
+.item-hints .hint:hover .hint-content::before {
+  width: 180px;
+  transition: width 0.4s;
+}
+.item-hints .hint-content::after {
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  bottom: 29px;
+  left: 0;
+  width: 80px;
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.item-hints .hint:hover .hint-content::after {
+  opacity: 1;
+  visibility: visible;
+}
+.item-hints .hint[data-position="4"] .hint-content {
+  bottom: 85px;
+  left: 50%;
+  margin-left: 56px;
+}
