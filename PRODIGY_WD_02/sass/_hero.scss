@@ -1,0 +1,152 @@
+.main-image {
+  position: relative;
+  overflow: hidden;
+  border: 0.3rem solid var(--heading-color);
+  border-radius: 50% 40% 30% 70%/60% 30% 70% 40%;
+  background-color: #bebab6;
+  transition: all 1s ease-in-out;
+  animation: morphBorder 8s ease-in-out infinite;
+}
+
+@keyframes morphBorder {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 70% 60% 40%/30% 60% 40% 70%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.content img {
+  max-width: 100%;
+  height: 30rem;
+  border-radius: 50%;
+}
+
+.video-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  object-fit: cover;
+
+  @media (max-width: 50em) {
+    height: 80vh;
+  }
+}
+
+#backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  z-index: 1; /* Ensure content is above the video */
+  margin-top: 8rem;
+}
+
+.text-content h1 {
+  font-size: 5.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.text-content span {
+  font-size: var(--para-fontsize);
+}
+
+.intro {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--para-color);
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .content {
+    width: 80%;
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content span {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+}
+
+/* Existing styles for the Tech Stack section */
+.tech-stack {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-stack p {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--para-color);
+  margin-right: 10px;
+  border-right: 0.2rem solid var(--para-color);
+  padding-right: 2rem;
+}
+
+.tech-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  margin: 0 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Add media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .tech-stack {
+    flex-direction: column;
+  }
+
+  .tech-stack p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--para-color);
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tech-icons img {
+    margin: 5px;
+  }
+}

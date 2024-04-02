@@ -1,0 +1,89 @@
+/* About me */
+.about-sec {
+  margin: 12rem auto;
+}
+
+.container {
+  max-width: 107rem;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 8rem;
+
+  @media (max-width: 50em) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.about-img {
+  position: relative;
+}
+
+.about-image {
+  border-radius: 1.7rem;
+  height: 35rem;
+  width: 41rem;
+}
+
+.ring {
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -4rem;
+  height: 19rem;
+  position: absolute;
+  right: -5rem;
+  width: 19rem;
+}
+
+.web-ring {
+  position: absolute;
+  width: 19rem;
+  animation: rotate 9s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.laptop {
+  position: absolute;
+  width: 6rem;
+  bottom: 3rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.about-me {
+  margin-top: 5rem;
+  padding-right: 1.5rem;
+  @media (max-width: 50em) {
+    text-align: center;
+  }
+}
+
+.me {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+}
+
+.about-head {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #767676;
+}
